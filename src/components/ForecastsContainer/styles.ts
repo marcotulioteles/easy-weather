@@ -10,6 +10,10 @@ export const Container = styled.div`
   margin-top: 24px;
   background-color: ${theme.COLORS.BOX_BACKGROUND};
   border-radius: 8px;
+
+  @media (min-width: 1200px) {
+    max-width: 1200px;
+  }
 `;
 
 export const Title = styled.h1`

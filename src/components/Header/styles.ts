@@ -7,12 +7,33 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 40px;
+
+  @media (min-width: 720px) {
+    max-width: 1200px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+    min-width: 320px;
+  }
+`;
+
+export const LogoAndDate = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 720px) {
+    align-items: center;
+  }
 `;
 
 export const AppTitle = styled.h1`
@@ -22,6 +43,10 @@ export const AppTitle = styled.h1`
 
   &strong {
     font-family: ${theme.FONTS.TITLE};
+  }
+
+  @media (min-width: 720px) {
+    margin-left: 12px;
   }
 `
 
@@ -34,4 +59,14 @@ export const DateText = styled.p`
   font-size: 1rem;
   color: ${theme.COLORS.TEXT};
   margin-left: 12px;
+`;
+
+export const ResearchContainer = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1020px) {
+    max-width: 480px;
+  }
 `;

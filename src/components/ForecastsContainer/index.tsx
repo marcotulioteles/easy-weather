@@ -9,7 +9,6 @@ export function ForecastsContainer({ children }: Props) {
   return (
     <Container>
       <Title>FORECAST</Title>
-
       {children}
     </Container>
   );
