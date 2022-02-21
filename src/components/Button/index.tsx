@@ -2,8 +2,13 @@ import {
   Container
 } from './styles';
 
-export function Button() {
+type Props = {
+  type: 'button' | 'submit' | 'reset' | undefined;
+  name: string
+}
+
+export function Button({ type, name }: Props) {
   return (
-    <Container>search</Container>
+    <Container type={type}>{name}</Container>
   );
 };

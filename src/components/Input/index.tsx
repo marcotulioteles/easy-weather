@@ -10,7 +10,7 @@ export function Input() {
   return (
     <Container>
       <InputField
-        placeholder='your location e.g.: (New York, United States)'
+        placeholder='Your location e.g.: (New York, US)'
       />
       <FiSearch
         color={theme.COLORS.BOX_BORDER}

@@ -37,7 +37,10 @@ export function Header() {
       </LogoAndDate>
       <ResearchContainer>
         <Input />
-        <Button />
+        <Button
+          type='submit'
+          name='search'
+        />
       </ResearchContainer>
     </Container>
   )
