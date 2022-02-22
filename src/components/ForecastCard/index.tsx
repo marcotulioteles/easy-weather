@@ -9,16 +9,20 @@ import {
 } from "./styles";
 import { WiDayCloudyHigh } from 'react-icons/wi';
 import { ForecastSideInfo } from '../ForecastSideInfo';
+import { useGetForecasts } from '../../hooks/forecasts';
+import { convertKelvinToCelsius } from '../../utils';
 
 export function ForecastCard() {
+  const { forecast } = useGetForecasts();
+
   return (
     <Container>
       <ForecastSideInfo />
       <Content>
         <WiDayCloudyHigh size={96} />
-        <Description>partly cloudy</Description>
+        <Description>{forecast.weather.description}</Description>
         <TemperatureWrapper>
-          <Temperature>45</Temperature>
+          <Temperature>{convertKelvinToCelsius(forecast.main.temp)}</Temperature>
           <WiCelsius size={80} style={{ position: 'absolute', left: 56, top: 4 }} />
         </TemperatureWrapper>
       </Content>
