@@ -5,12 +5,19 @@ import {
 } from './styles';
 
 import { theme } from '../../styles/theme';
+import { ChangeEvent } from 'react';
 
-export function Input() {
+type Props = {
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export function Input({ onChange }: Props) {
   return (
     <Container>
       <InputField
         placeholder='Your location e.g.: (New York, US)'
+        type='text'
+        onChange={onChange}
       />
       <FiSearch
         color={theme.COLORS.BOX_BORDER}

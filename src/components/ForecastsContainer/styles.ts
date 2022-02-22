@@ -8,8 +8,10 @@ export const Container = styled.div`
   width: 90%;
   min-height: 220px;
   margin-top: 24px;
-  background-color: ${theme.COLORS.BOX_BACKGROUND};
+  /* background-color: ${theme.COLORS.BOX_BACKGROUND}; */
+  background: radial-gradient(100% 1406.25% at 0% 100%, #0E1D28 28.5%, #193449 60.32%);
   border-radius: 8px;
+  padding-bottom: 36px;
 
   @media (min-width: 1200px) {
     max-width: 1200px;

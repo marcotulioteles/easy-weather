@@ -61,7 +61,7 @@ export const DateText = styled.p`
   margin-left: 12px;
 `;
 
-export const ResearchContainer = styled.form`
+export const ResearchContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;

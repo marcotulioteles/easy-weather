@@ -13,8 +13,17 @@ import {
 
 import { Input } from '../Input';
 import { Button } from '../Button';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { useGetForecasts } from '../../hooks/forecasts';
 
 export function Header() {
+  const [locationInputValue, setLocationInputValue] = useState('');
+  const { setLocation } = useGetForecasts();
+
+  const handleSetLocation = (event: ChangeEvent<HTMLInputElement>) => {
+    setLocationInputValue(event.target.value);
+  }
+
   return (
     <Container>
       <LogoAndDate>
@@ -36,10 +45,12 @@ export function Header() {
         </DateContainer>
       </LogoAndDate>
       <ResearchContainer>
-        <Input />
+        <Input
+          onChange={handleSetLocation}
+        />
         <Button
-          type='submit'
           name='search'
+          onClick={() => setLocation(locationInputValue)}
         />
       </ResearchContainer>
     </Container>

@@ -3,12 +3,13 @@ import {
 } from './styles';
 
 type Props = {
-  type: 'button' | 'submit' | 'reset' | undefined;
-  name: string
+  type?: 'button' | 'submit' | 'reset' | undefined;
+  name: string;
+  onClick: () => void;
 }
 
-export function Button({ type, name }: Props) {
+export function Button({ type, name, onClick }: Props) {
   return (
-    <Container type={type}>{name}</Container>
+    <Container type={type} onClick={onClick}>{name}</Container>
   );
 };
