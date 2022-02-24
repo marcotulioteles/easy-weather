@@ -16,16 +16,20 @@ export function ForecastCard() {
   const { forecast } = useGetForecasts();
 
   return (
-    <Container>
-      <ForecastSideInfo />
-      <Content>
-        <WiDayCloudyHigh size={96} />
-        <Description>{forecast.weather.description}</Description>
-        <TemperatureWrapper>
-          <Temperature>{convertKelvinToCelsius(forecast.main.temp)}</Temperature>
-          <WiCelsius size={80} style={{ position: 'absolute', left: 56, top: 4 }} />
-        </TemperatureWrapper>
-      </Content>
-    </Container>
+    <>
+      {forecast?.weather?.description &&
+        <Container>
+          <ForecastSideInfo />
+          <Content>
+            <WiDayCloudyHigh size={96} />
+            <Description>{forecast?.weather?.description}</Description>
+            <TemperatureWrapper>
+              <Temperature>{convertKelvinToCelsius(forecast?.main?.temp)}</Temperature>
+              <WiCelsius size={80} style={{ position: 'absolute', left: 56, top: 4 }} />
+            </TemperatureWrapper>
+          </Content>
+        </Container>
+      }
+    </>
   );
 };

@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   margin-top: 40px;
 
-  @media (min-width: 720px) {
+  @media (min-width: 1200px) {
     max-width: 1200px;
     flex-direction: row;
     justify-content: space-between;
@@ -20,7 +20,7 @@ export const LogoContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 720px) {
+  @media (min-width: 1200px) {
     flex-direction: row;
     min-width: 320px;
   }
@@ -31,7 +31,7 @@ export const LogoAndDate = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 720px) {
+  @media (max-width: 1200px) {
     align-items: center;
   }
 `;
@@ -45,7 +45,7 @@ export const AppTitle = styled.h1`
     font-family: ${theme.FONTS.TITLE};
   }
 
-  @media (min-width: 720px) {
+  @media (min-width: 1200px) {
     margin-left: 12px;
   }
 `
@@ -69,4 +69,21 @@ export const ResearchContainer = styled.div`
   @media (min-width: 1020px) {
     max-width: 480px;
   }
+`;
+
+export const Location = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1200px) {
+    margin-top: 1.5rem;
+  }
+`;
+
+export const LocationText = styled.p`
+  font-size: 2rem;
+  margin-left: 0.5rem;
 `;

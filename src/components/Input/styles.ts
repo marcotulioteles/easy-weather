@@ -20,6 +20,7 @@ export const InputField = styled.input`
   border: none;
   padding: 0 16px;
   outline: none;
+  text-align: center;
 
   &::placeholder {
     color: ${theme.COLORS.PLACEHOLDER_TEXT}
