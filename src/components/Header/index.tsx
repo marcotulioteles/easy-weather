@@ -15,17 +15,27 @@ import {
 
 import { Input } from '../Input';
 import { Button } from '../Button';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useGetForecasts } from '../../hooks/forecasts';
 
 export function Header() {
   const [locationInputValue, setLocationInputValue] = useState('');
-  const { setLocation } = useGetForecasts();
-  const { forecast } = useGetForecasts();
+  const [currentDate, setCurrentDate] = useState('');
+  const { setLocation, forecast, locationResponse } = useGetForecasts();
 
   const handleSetLocation = (event: ChangeEvent<HTMLInputElement>) => {
     setLocationInputValue(event.target.value);
   }
+
+  useEffect(() => {
+    const date = Date.now();
+    const dateFormatted = new Intl.DateTimeFormat('en-US', {
+      dateStyle: 'long',
+      timeStyle: 'short'
+    }).format(date);
+
+    setCurrentDate(dateFormatted);
+  }, [forecast])
 
   return (
     <Container>
@@ -42,17 +52,18 @@ export function Header() {
         <DateContainer>
           <FiCalendar
             color={theme.COLORS.BOX_BORDER}
-            size={18}
+            size={28}
           />
-          <DateText>23 February 2022</DateText>
+          <DateText>{currentDate}</DateText>
         </DateContainer>
       </LogoAndDate>
       <Location>
         {forecast?.city &&
           <>
             <FiMapPin size={36} color={theme.COLORS.BOX_BORDER} />
-            <LocationText>{`${forecast.city}, ${forecast.country}`}</LocationText>
-          </>}
+            <LocationText>{`${locationResponse.name}, ${locationResponse.country}`}</LocationText>
+          </>
+        }
       </Location>
       <ResearchContainer>
         <Input

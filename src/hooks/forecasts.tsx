@@ -1,5 +1,6 @@
+import { AxiosResponse } from 'axios';
 import { useContext, useEffect, createContext, ReactNode, useState, SetStateAction } from 'react';
-import { currentWeatherData, directGeocoding } from '../services/api';
+import { currentWeatherDataAPI, directGeocodingAPI } from '../services/api';
 
 type ForecastsProviderProps = {
   children: ReactNode;
@@ -23,8 +24,15 @@ interface ForecastData {
   country: string;
 }
 
+interface LocationDataResponse {
+  name: string;
+  country: string;
+  state: string;
+}
+
 interface ForecastContextProps {
-  location: string;
+  locationInput: string;
+  locationResponse: LocationDataResponse;
   setLocation: React.Dispatch<SetStateAction<string>>;
   error: boolean;
   forecast: ForecastData;
@@ -33,17 +41,28 @@ interface ForecastContextProps {
 export const ForecastsContext = createContext({} as ForecastContextProps);
 
 function ForecastsProvider({ children }: ForecastsProviderProps) {
-  const [location, setLocation] = useState('');
-  const [forecast, setForecast] = useState<ForecastData>({} as ForecastData);
+  const [locationInput, setLocation] = useState('');
+  const [locationResponse, setLocationResponse] = useState<LocationDataResponse>({} as LocationDataResponse);
+  const [forecast, setLocationInput] = useState<ForecastData>({} as ForecastData);
   const [error, setError] = useState(false);
 
-  async function fetchForecast(location: string) {
+  async function fetchForecast(locationInput: string) {
     try {
-      const response = await directGeocoding.get(`direct?q=${location}&appid=${process.env.NEXT_PUBLIC_APPID}`);
-      const data = response.data;
+      const response = await directGeocodingAPI
+        .get(`direct?q=${locationInput}&appid=${process.env.NEXT_PUBLIC_APPID}`);
+      const locationData = response.data;
 
-      if (data) {
-        const response = await currentWeatherData.get(`weather?lat=${data[0].lat}&lon=${data[0].lon}&appid=${process.env.NEXT_PUBLIC_APPID}`)
+      const locationFormatted = {
+        name: locationData[0].name,
+        country: locationData[0].country,
+        state: locationData[0].state
+      }
+
+      setLocationResponse(locationFormatted);
+
+      if (locationData) {
+        const response = await currentWeatherDataAPI
+          .get(`weather?lat=${locationData[0].lat}&lon=${locationData[0].lon}&appid=${process.env.NEXT_PUBLIC_APPID}`)
         const forecastData = response.data;
 
         const dataFormatted = {
@@ -64,7 +83,7 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
           country: forecastData.sys.country
         }
 
-        setForecast(dataFormatted);
+        setLocationInput(dataFormatted);
       }
     } catch (error) {
       setError(true);
@@ -72,11 +91,18 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
   }
 
   useEffect(() => {
-    if (location) fetchForecast(location);
-  }, [location]);
+    if (locationInput) fetchForecast(locationInput);
+  }, [locationInput]);
 
   return (
-    <ForecastsContext.Provider value={{ location, setLocation, error, forecast }}>
+    <ForecastsContext.Provider value={
+      {
+        locationInput,
+        locationResponse,
+        setLocation,
+        error,
+        forecast
+      }}>
       {children}
     </ForecastsContext.Provider>
   );

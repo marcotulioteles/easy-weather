@@ -22,7 +22,7 @@ export function Input({ onChange }: Props) {
       <FiSearch
         color={theme.COLORS.BOX_BORDER}
         size={16}
-        style={{ marginRight: 12 }}
+        style={{ position: 'absolute', left: 12 }}
       />
     </Container>
   );

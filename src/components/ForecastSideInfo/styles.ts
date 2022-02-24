@@ -6,15 +6,15 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-left: 1.25rem;
+  margin-left: 0.75rem;
 `;
 
 export const ContainerSideInfo = styled.div`
-  width: 4rem;
+  width: 5rem;
   height: 1.25rem;
   display: flex;
-  justify-content: flex-start ;
-  align-items: center;
+  justify-content: space-around ;
+  align-items: center;  
 `;
 
 export const SideInfoText = styled.p`

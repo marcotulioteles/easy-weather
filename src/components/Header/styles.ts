@@ -52,6 +52,7 @@ export const AppTitle = styled.h1`
 
 export const DateContainer = styled.div`
   display: flex;
+  align-items: center;
   margin-top: 1.2rem;
 `;
 
@@ -86,4 +87,5 @@ export const Location = styled.div`
 export const LocationText = styled.p`
   font-size: 2rem;
   margin-left: 0.5rem;
+  text-align: center;
 `;

@@ -27,11 +27,14 @@ export const Description = styled.p`
 export const TemperatureWrapper = styled.div`
   display: flex;
   align-items: center;
-  position: relative;
 `;
 
 export const Temperature = styled.h2`
   font-weight: normal;
   font-size: 4rem;
-  margin-right: 32px;
+`;
+
+export const CelsiusSign = styled.p`
+  font-family: 'Barlow Semi Condensed', 'Arial', sans-serif;
+  font-size: 2.5rem;
 `;

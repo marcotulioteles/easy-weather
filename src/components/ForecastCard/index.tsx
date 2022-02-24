@@ -1,6 +1,7 @@
 import { WiCelsius } from 'react-icons/wi';
 
 import {
+  CelsiusSign,
   Container,
   Content,
   Description,
@@ -25,7 +26,7 @@ export function ForecastCard() {
             <Description>{forecast?.weather?.description}</Description>
             <TemperatureWrapper>
               <Temperature>{convertKelvinToCelsius(forecast?.main?.temp)}</Temperature>
-              <WiCelsius size={80} style={{ position: 'absolute', left: 56, top: 4 }} />
+              <CelsiusSign>°C</CelsiusSign>
             </TemperatureWrapper>
           </Content>
         </Container>

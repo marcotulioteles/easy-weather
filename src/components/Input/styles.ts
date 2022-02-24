@@ -11,6 +11,7 @@ export const Container = styled.div`
   color: ${theme.COLORS.TEXT}; 
   border-radius: 8px;
   margin-top: 16px;
+  position: relative;
 `;
 
 export const InputField = styled.input`
@@ -20,9 +21,11 @@ export const InputField = styled.input`
   border: none;
   padding: 0 16px;
   outline: none;
+  font-size: 1.25rem;
   text-align: center;
 
   &::placeholder {
-    color: ${theme.COLORS.PLACEHOLDER_TEXT}
+    color: ${theme.COLORS.PLACEHOLDER_TEXT};
+    font-size: 1rem;
   }
 `;
