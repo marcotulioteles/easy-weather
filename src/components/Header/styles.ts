@@ -36,19 +36,27 @@ export const LogoAndDate = styled.div`
   }
 `;
 
-export const AppTitle = styled.h1`
-  font-size: 2rem;
-  font-weight: normal;
+export const AppTitle = styled.div`
+  display: flex;
+  align-items: center;
   margin-top: 12px;
-
-  &strong {
-    font-family: ${theme.FONTS.TITLE};
-  }
 
   @media (min-width: 1200px) {
     margin-left: 12px;
   }
 `
+
+export const AppTitleFirstName = styled.h1`
+  font-family: ${theme.FONTS.TITLE};
+  font-size: 2.75rem;
+  font-weight: normal;
+`;
+
+export const AppTitleLastName = styled.p`
+  font-family: ${theme.FONTS.TEXT};
+  font-size: 2.75rem;
+  font-weight: normal;
+`;
 
 export const DateContainer = styled.div`
   display: flex;
@@ -85,7 +93,7 @@ export const Location = styled.div`
 `;
 
 export const LocationText = styled.p`
-  font-size: 2rem;
-  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
   text-align: center;
 `;

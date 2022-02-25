@@ -10,7 +10,9 @@ import {
   ResearchContainer,
   LogoAndDate,
   Location,
-  LocationText
+  LocationText,
+  AppTitleFirstName,
+  AppTitleLastName
 } from './styles';
 
 import { Input } from '../Input';
@@ -47,7 +49,10 @@ export function Header() {
             height={80}
             alt='EasyWeatherLogo'
           />
-          <AppTitle><strong>Easy</strong>Weather</AppTitle>
+          <AppTitle>
+            <AppTitleFirstName>Easy</AppTitleFirstName>
+            <AppTitleLastName>Weather</AppTitleLastName>
+          </AppTitle>
         </LogoContainer>
         <DateContainer>
           <FiCalendar
