@@ -12,8 +12,7 @@ import {
   WiThunderstorm,
   WiWindy,
 } from 'react-icons/wi';
-import { IconType } from 'react-icons';
-import { Container, Description } from "./styles";
+import { Container, Description, IconWrapper } from "./styles";
 
 const weatherIcons = [
   { name: '01d', icon: <WiDaySunny /> },
@@ -38,13 +37,16 @@ const weatherIcons = [
 
 interface Props {
   iconName: string;
+  iconSize: number;
   description: string;
 }
 
-export function IconsAndDescription({ iconName = '01d', description }: Props) {
+export function IconsAndDescription({ iconName, description, iconSize }: Props) {
   return (
     <Container>
-      {weatherIcons.find(el => el.name === iconName)?.icon}
+      <IconWrapper iconSize={iconSize}>
+        {weatherIcons.find(el => el.name === iconName)?.icon}
+      </IconWrapper>
       <Description>{description}</Description>
     </Container>
   );

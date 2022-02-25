@@ -63,7 +63,7 @@ export function Header() {
         </DateContainer>
       </LogoAndDate>
       <Location>
-        {forecast?.city &&
+        {forecast?.current?.temp &&
           <>
             <FiMapPin size={36} color={theme.COLORS.BOX_BORDER} />
             <LocationText>{`${locationResponse.name}, ${locationResponse.country}`}</LocationText>

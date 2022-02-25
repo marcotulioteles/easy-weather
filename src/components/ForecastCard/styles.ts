@@ -20,10 +20,6 @@ export const Content = styled.div`
   align-items: center;
 `;
 
-export const Description = styled.p`
-  font-size: 12px;
-`;
-
 export const TemperatureWrapper = styled.div`
   display: flex;
   align-items: center;

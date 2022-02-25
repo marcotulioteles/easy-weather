@@ -1,31 +1,31 @@
-import { WiCelsius } from 'react-icons/wi';
-
 import {
   CelsiusSign,
   Container,
   Content,
-  Description,
   Temperature,
   TemperatureWrapper
 } from "./styles";
-import { WiDayCloudyHigh } from 'react-icons/wi';
 import { ForecastSideInfo } from '../ForecastSideInfo';
 import { useGetForecasts } from '../../hooks/forecasts';
 import { convertKelvinToCelsius } from '../../utils';
+import { IconsAndDescription } from '../IconsAndDescription';
 
 export function ForecastCard() {
   const { forecast } = useGetForecasts();
 
   return (
     <>
-      {forecast?.weather?.description &&
+      {forecast?.current?.weather[0].description &&
         <Container>
           <ForecastSideInfo />
           <Content>
-            <WiDayCloudyHigh size={96} />
-            <Description>{forecast?.weather?.description}</Description>
+            <IconsAndDescription
+              description={forecast?.current?.weather[0].description}
+              iconName={forecast?.current?.weather[0].icon}
+              iconSize={96}
+            />
             <TemperatureWrapper>
-              <Temperature>{convertKelvinToCelsius(forecast?.main?.temp)}</Temperature>
+              <Temperature>{convertKelvinToCelsius(forecast?.current?.temp)}</Temperature>
               <CelsiusSign>°C</CelsiusSign>
             </TemperatureWrapper>
           </Content>

@@ -1,27 +1,61 @@
 import { AxiosResponse } from 'axios';
 import { useContext, useEffect, createContext, ReactNode, useState, SetStateAction } from 'react';
-import { currentWeatherDataAPI, directGeocodingAPI } from '../services/api';
+import { oneCallWeatherDataAPI, directGeocodingAPI } from '../services/api';
 
 type ForecastsProviderProps = {
   children: ReactNode;
 }
 
 interface ForecastData {
-  weather: {
-    description: string;
-  };
-  main: {
+  current: {
     temp: number;
+    feels_like: number;
     humidity: number;
+    clouds: number;
+    wind_speed: number;
+    weather: [
+      {
+        description: string;
+        icon: string
+      }
+    ];
   };
-  wind: {
-    speed: number;
-  };
-  clouds: {
-    all: number;
-  };
-  city: string;
-  country: string;
+  hourly: [
+    {
+      dt: number;
+      temp: number;
+      feels_like: number;
+      humidity: number;
+      clouds: number;
+      wind_speed: number;
+      weather: [
+        {
+          description: string;
+          icon: string;
+        }
+      ]
+    }
+  ];
+  daily: [
+    {
+      dt: number;
+      temp: {
+        day: number;
+      };
+      feels_like: {
+        day: number;
+      };
+      humidity: number;
+      wind_speed: number;
+      weather: [
+        {
+          description: string;
+          icon: string
+        }
+      ];
+      clouds: number;
+    }
+  ]
 }
 
 interface LocationDataResponse {
@@ -61,26 +95,21 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
       setLocationResponse(locationFormatted);
 
       if (locationData) {
-        const response = await currentWeatherDataAPI
-          .get(`weather?lat=${locationData[0].lat}&lon=${locationData[0].lon}&appid=${process.env.NEXT_PUBLIC_APPID}`)
+        const response = await oneCallWeatherDataAPI
+          .get(`onecall?lat=${locationData[0].lat}&lon=${locationData[0].lon}&exclude=minutely,alerts&appid=${process.env.NEXT_PUBLIC_APPID}`)
         const forecastData = response.data;
 
         const dataFormatted = {
-          weather: {
-            description: forecastData.weather[0].description,
+          current: {
+            temp: forecastData.current.temp,
+            feels_like: forecastData.current.feels_like,
+            humidity: forecastData.current.humidity,
+            clouds: forecastData.current.clouds,
+            wind_speed: forecastData.current.wind_speed,
+            weather: forecastData.current.weather,
           },
-          main: {
-            temp: forecastData.main.temp,
-            humidity: forecastData.main.humidity
-          },
-          wind: {
-            speed: forecastData.wind.speed
-          },
-          clouds: {
-            all: forecastData.clouds.all
-          },
-          city: forecastData.name,
-          country: forecastData.sys.country
+          hourly: forecastData.hourly,
+          daily: forecastData.daily
         }
 
         setLocationInput(dataFormatted);
