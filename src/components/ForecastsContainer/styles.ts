@@ -6,11 +6,11 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 90%;
-  min-height: 220px;
-  margin-top: 24px;
+  min-height: 13.75rem;
+  margin-top: 1.5rem;
   background: radial-gradient(100% 1406.25% at 0% 100%, #0E1D28 28.5%, #193449 60.32%);
-  border-radius: 8px;
-  padding-bottom: 36px;
+  border-radius: 0.5rem;
+  padding-bottom: 2.25rem;
 
   @media (min-width: 1200px) {
     max-width: 1200px;
@@ -21,5 +21,5 @@ export const Title = styled.h1`
   font-weight: normal;
   font-size: 1.2rem;
   color: ${theme.COLORS.PLACEHOLDER_TEXT};
-  margin-top: 24px;
+  margin-top: 1.5rem;
 `;

@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 2.5rem;
 
   @media (min-width: 1200px) {
     max-width: 1200px;
@@ -39,10 +39,10 @@ export const LogoAndDate = styled.div`
 export const AppTitle = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 0.75rem;
 
   @media (min-width: 1200px) {
-    margin-left: 12px;
+    margin-left: 0.75rem;
   }
 `
 
@@ -67,7 +67,7 @@ export const DateContainer = styled.div`
 export const DateText = styled.p`
   font-size: 1rem;
   color: ${theme.COLORS.TEXT};
-  margin-left: 12px;
+  margin-left: 0.75rem;
 `;
 
 export const ResearchContainer = styled.div`

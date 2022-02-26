@@ -9,8 +9,8 @@ export const Container = styled.div`
   background-color: ${theme.COLORS.BOX_BACKGROUND};
   border: 1px solid ${theme.COLORS.BOX_BORDER};
   color: ${theme.COLORS.TEXT}; 
-  border-radius: 8px;
-  margin-top: 16px;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
   position: relative;
 `;
 
@@ -19,7 +19,7 @@ export const InputField = styled.input`
   height: 100%;
   background-color: transparent;
   border: none;
-  padding: 0 16px;
+  padding: 0 1rem;
   outline: none;
   font-size: 1.25rem;
   text-align: center;
