@@ -6,10 +6,13 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.75rem;
   background: linear-gradient(158.55deg, rgba(255, 255, 255, 0.15) 2.41%, rgba(196, 196, 196, 0) 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.75rem;
+
+  @media (max-width: 1200px) {
+    margin-top: 0.75rem;
+  }
 `;
 
 export const Content = styled.div`

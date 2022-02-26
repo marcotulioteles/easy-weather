@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
 export const Container = styled.div`
-  width: 90%;
+  max-width: 13.75rem;
   min-height: auto;
   display: flex;
   flex-direction: column;
@@ -13,8 +13,12 @@ export const Container = styled.div`
   border-radius: 0.75rem;
   margin-top: 1rem;
 
+  @media (min-width: 1200px) {
+    margin-top: 0;
+  }
+  
   @media (min-width: 440px) {
-    width: 25rem;
+    max-width: 25rem;
   }
 `;
 
@@ -32,7 +36,7 @@ export const TitleText = styled.h1`
 `;
 
 export const HourlyContainer = styled.div`
-  width: 90%;
+  width: 87.5%;
   height: auto;
   display: flex;
   justify-content: space-between;

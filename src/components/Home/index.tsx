@@ -4,6 +4,7 @@ import { ForecastCard } from "../ForecastCard";
 import { ForecastsContainer } from "../ForecastsContainer";
 import { Header } from "../Header";
 import { HourlyCard } from "../HourlyCard";
+import { NextSevenDaysCard } from "../NextSevenDaysCard";
 import { Container } from "./styles";
 
 export function HomeContent() {
@@ -19,6 +20,7 @@ export function HomeContent() {
       <ForecastsContainer>
         <ForecastCard />
         <HourlyCard />
+        <NextSevenDaysCard />
       </ForecastsContainer>
     </Container>
   )
