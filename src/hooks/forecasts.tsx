@@ -6,56 +6,58 @@ type ForecastsProviderProps = {
   children: ReactNode;
 }
 
-interface ForecastData {
-  current: {
-    temp: number;
-    feels_like: number;
-    humidity: number;
-    clouds: number;
-    wind_speed: number;
-    weather: [
-      {
-        description: string;
-        icon: string
-      }
-    ];
-  };
-  hourly: [
+type HourlyForecastData = {
+  dt: number;
+  temp: number;
+  feels_like: number;
+  humidity: number;
+  clouds: number;
+  wind_speed: number;
+  weather: [
     {
-      dt: number;
-      temp: number;
-      feels_like: number;
-      humidity: number;
-      clouds: number;
-      wind_speed: number;
-      weather: [
-        {
-          description: string;
-          icon: string;
-        }
-      ]
-    }
-  ];
-  daily: [
-    {
-      dt: number;
-      temp: {
-        day: number;
-      };
-      feels_like: {
-        day: number;
-      };
-      humidity: number;
-      wind_speed: number;
-      weather: [
-        {
-          description: string;
-          icon: string
-        }
-      ];
-      clouds: number;
+      description: string;
+      icon: string;
     }
   ]
+}
+
+type DailyForecastData = {
+  dt: number;
+  temp: {
+    day: number;
+  };
+  feels_like: {
+    day: number;
+  };
+  humidity: number;
+  wind_speed: number;
+  weather: [
+    {
+      description: string;
+      icon: string
+    }
+  ];
+  clouds: number;
+}
+
+type CurrentForecastData = {
+  temp: number;
+  feels_like: number;
+  humidity: number;
+  clouds: number;
+  wind_speed: number;
+  weather: [
+    {
+      description: string;
+      icon: string
+    }
+  ];
+}
+
+interface ForecastData {
+  current: CurrentForecastData;
+  hourly: HourlyForecastData[];
+  daily: DailyForecastData[];
 }
 
 interface LocationDataResponse {
@@ -108,8 +110,38 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
             wind_speed: forecastData.current.wind_speed,
             weather: forecastData.current.weather,
           },
-          hourly: forecastData.hourly,
-          daily: forecastData.daily
+          hourly: forecastData.hourly.map((hour: HourlyForecastData) => {
+            return {
+              dt: hour.dt,
+              temp: hour.temp,
+              feels_like: hour.feels_like,
+              humidity: hour.humidity,
+              clouds: hour.clouds,
+              wind_speed: hour.wind_speed,
+              weather: hour.weather.map(weather => {
+                return {
+                  description: weather.description,
+                  icon: weather.icon
+                }
+              })
+            }
+          }),
+          daily: forecastData.daily.map((day: DailyForecastData) => {
+            return {
+              dt: day.dt,
+              temp: day.temp,
+              feels_like: day.feels_like,
+              humidity: day.humidity,
+              clouds: day.clouds,
+              wind_speed: day.wind_speed,
+              weather: day.weather.map(weather => {
+                return {
+                  description: weather.description,
+                  icon: weather.icon
+                }
+              })
+            }
+          })
         }
 
         setLocationInput(dataFormatted);
