@@ -10,17 +10,17 @@ import { Container } from "./styles";
 export function HomeContent() {
   const { forecast } = useGetForecasts();
 
-  useEffect(() => {
-    console.log(forecast)
-  }, [forecast]);
-
   return (
     <Container>
       <Header />
       <ForecastsContainer>
-        <ForecastCard />
-        <HourlyCard />
-        <NextSevenDaysCard />
+        {forecast.current &&
+          <>
+            <ForecastCard />
+            <HourlyCard />
+            <NextSevenDaysCard />
+          </>
+        }
       </ForecastsContainer>
     </Container>
   )

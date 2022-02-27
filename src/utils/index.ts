@@ -11,3 +11,29 @@ export const convertKelvinToFahrenheit = (temperature: number) => {
 
   return FAHRENHEIT.toFixed(1);
 }
+
+export const hourFormatted = (date: number) => {
+  const regex = /\d+:\d{2}\s[a-zA-z]{2}/;
+
+  const dateFormatted = new Intl.DateTimeFormat('en-US', {
+    dateStyle: "full",
+    timeStyle: "short"
+  }).format(date * 1000);
+
+  const hourExtracted = dateFormatted.match(regex) as Array<string>;
+  const hourSliced = hourExtracted[0].split(/\s/);
+  const hourInNumber = Number(hourSliced[0].match(/^\d+/));
+  let hourToShow = 0;
+
+  if (hourSliced[1] === 'PM' && hourInNumber < 12) {
+    hourToShow = hourInNumber + 12;
+  } else {
+    hourToShow = hourInNumber;
+  }
+
+  if ((hourSliced[1] === 'AM' && hourInNumber === 12)) {
+    hourToShow = 0;
+  }
+
+  return hourToShow < 10 ? `0${hourToShow}:00` : `${hourToShow}:00`;
+};

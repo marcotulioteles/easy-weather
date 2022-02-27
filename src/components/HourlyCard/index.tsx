@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useGetForecasts } from "../../hooks/forecasts";
+import { hourFormatted } from "../../utils";
 import { HourlyElement } from "../HourlyElement";
 import {
   Container,
@@ -6,17 +9,26 @@ import {
   TitleWrapper
 } from "./styles";
 
-const hourlyList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
 export function HourlyCard() {
+  const { forecast } = useGetForecasts();
+
+  useEffect(() => {
+    console.log(hourFormatted(forecast.hourly[0].dt * 1000));
+  }, [forecast]);
+
   return (
     <Container>
       <TitleWrapper>
         <TitleText>hourly forecast</TitleText>
       </TitleWrapper>
       <HourlyContainer>
-        {hourlyList.map((item, index) => (
-          <HourlyElement key={`hourly-${index}`} />
+        {forecast.hourly.map((item, index) => (
+          <HourlyElement
+            key={`hourly-${index}`}
+            hour={hourFormatted(item.dt)}
+            iconName={item.weather[0].icon}
+            temperature={item.temp.toString()}
+          />
         ))}
       </HourlyContainer>
     </Container>

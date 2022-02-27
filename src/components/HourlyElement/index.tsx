@@ -1,3 +1,4 @@
+import { convertKelvinToCelsius } from "../../utils";
 import { weatherIcons } from "../../utils/weather-icons-constant";
 import {
   Container,
@@ -8,15 +9,21 @@ import {
   TemperatureWrapper
 } from "./styles";
 
-export function HourlyElement() {
+type Props = {
+  hour: string;
+  iconName: string;
+  temperature: string;
+}
+
+export function HourlyElement({ hour, iconName, temperature }: Props) {
   return (
     <Container>
-      <Hour>16:00</Hour>
+      <Hour>{hour}</Hour>
       <IconWrapper>
-        {weatherIcons.find(item => item.name === '01d')?.icon}
+        {weatherIcons.find(item => item.name === iconName)?.icon}
       </IconWrapper>
       <TemperatureWrapper>
-        <TemperatureNumber>28</TemperatureNumber>
+        <TemperatureNumber>{convertKelvinToCelsius(Number(temperature))}</TemperatureNumber>
         <TemperatureCelsiusSymbol>°C</TemperatureCelsiusSymbol>
       </TemperatureWrapper>
     </Container>
