@@ -23,7 +23,7 @@ import { useGetForecasts } from '../../hooks/forecasts';
 export function Header() {
   const [locationInputValue, setLocationInputValue] = useState('');
   const [currentDate, setCurrentDate] = useState('');
-  const { setLocation, forecast, locationResponse } = useGetForecasts();
+  const { setLocationInput, forecast, locationResponse, loading } = useGetForecasts();
 
   const handleSetLocation = (event: ChangeEvent<HTMLInputElement>) => {
     setLocationInputValue(event.target.value);
@@ -63,7 +63,7 @@ export function Header() {
         </DateContainer>
       </LogoAndDate>
       <Location>
-        {forecast?.current?.temp &&
+        {forecast?.current?.temp && !loading &&
           <>
             <FiMapPin size={36} color={theme.COLORS.BOX_BORDER} />
             <LocationText>{`${locationResponse.name}, ${locationResponse.country}`}</LocationText>
@@ -76,7 +76,7 @@ export function Header() {
         />
         <Button
           name='search'
-          onClick={() => setLocation(locationInputValue)}
+          onClick={() => setLocationInput(locationInputValue)}
         />
       </ResearchContainer>
     </Container>

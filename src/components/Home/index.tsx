@@ -4,17 +4,19 @@ import { ForecastCard } from "../ForecastCard";
 import { ForecastsContainer } from "../ForecastsContainer";
 import { Header } from "../Header";
 import { HourlyCard } from "../HourlyCard";
+import { Loading } from "../Loading";
 import { NextSevenDaysCard } from "../NextSevenDaysCard";
 import { Container } from "./styles";
 
 export function HomeContent() {
-  const { forecast } = useGetForecasts();
+  const { forecast, loading } = useGetForecasts();
 
   return (
     <Container>
       <Header />
       <ForecastsContainer>
-        {forecast.current &&
+        {loading && <Loading />}
+        {forecast.current && !loading &&
           <>
             <ForecastCard />
             <HourlyCard />

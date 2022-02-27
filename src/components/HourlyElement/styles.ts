@@ -15,7 +15,7 @@ export const Hour = styled.p`
 `;
 
 export const IconWrapper = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   margin: 0.25rem 0;

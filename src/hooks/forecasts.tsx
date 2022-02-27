@@ -1,4 +1,3 @@
-import { AxiosResponse } from 'axios';
 import { useContext, useEffect, createContext, ReactNode, useState, SetStateAction } from 'react';
 import { oneCallWeatherDataAPI, directGeocodingAPI } from '../services/api';
 
@@ -69,21 +68,25 @@ interface LocationDataResponse {
 interface ForecastContextProps {
   locationInput: string;
   locationResponse: LocationDataResponse;
-  setLocation: React.Dispatch<SetStateAction<string>>;
+  setLocationInput: React.Dispatch<SetStateAction<string>>;
   error: boolean;
   forecast: ForecastData;
+  loading: boolean;
 }
 
 export const ForecastsContext = createContext({} as ForecastContextProps);
 
 function ForecastsProvider({ children }: ForecastsProviderProps) {
-  const [locationInput, setLocation] = useState('');
+  const [locationInput, setLocationInput] = useState('');
   const [locationResponse, setLocationResponse] = useState<LocationDataResponse>({} as LocationDataResponse);
-  const [forecast, setLocationInput] = useState<ForecastData>({} as ForecastData);
+  const [forecast, setForecast] = useState<ForecastData>({} as ForecastData);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   async function fetchForecast(locationInput: string) {
     try {
+      setLoading(true);
+
       const response = await directGeocodingAPI
         .get(`direct?q=${locationInput}&appid=${process.env.NEXT_PUBLIC_APPID}`);
       const locationData = response.data;
@@ -144,7 +147,8 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
           })
         }
 
-        setLocationInput(dataFormatted);
+        setForecast(dataFormatted);
+        setLoading(false);
       }
     } catch (error) {
       setError(true);
@@ -160,9 +164,10 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
       {
         locationInput,
         locationResponse,
-        setLocation,
+        setLocationInput,
         error,
-        forecast
+        forecast,
+        loading
       }}>
       {children}
     </ForecastsContext.Provider>
