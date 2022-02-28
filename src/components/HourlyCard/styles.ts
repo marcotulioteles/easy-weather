@@ -26,13 +26,14 @@ export const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
   font-size: 1rem;  
-  color: ${theme.COLORS.PLACEHOLDER_TEXT};
+  color: ${theme.COLORS.LIGHT_GREY_APP};
   margin-top: 0.75rem;
 `;
 
 export const TitleText = styled.h1`
   font-size: 1rem;  
   font-weight: 700;
+  margin-left: 0.25rem;
 `;
 
 export const HourlyContainer = styled.div`

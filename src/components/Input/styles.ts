@@ -7,7 +7,7 @@ export const Container = styled.div`
   width: 100%;
   height: 2.5rem;
   background-color: ${theme.COLORS.BOX_BACKGROUND};
-  border: 1px solid ${theme.COLORS.BOX_BORDER};
+  border: 1px solid ${theme.COLORS.BLUE_APP};
   color: ${theme.COLORS.TEXT}; 
   border-radius: 0.5rem;
   margin-top: 1rem;
@@ -25,7 +25,7 @@ export const InputField = styled.input`
   text-align: center;
 
   &::placeholder {
-    color: ${theme.COLORS.PLACEHOLDER_TEXT};
+    color: ${theme.COLORS.LIGHT_GREY_APP};
     font-size: 1rem;
   }
 `;

@@ -25,13 +25,14 @@ export const Container = styled.div`
 export const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: ${theme.COLORS.PLACEHOLDER_TEXT};
+  justify-content: space-between;
+  color: ${theme.COLORS.LIGHT_GREY_APP};
   margin-top: 1rem;
 `;
 
 export const Title = styled.h1`
   font-size: 1rem;
+  margin-left: 0.25rem
 `;
 
 export const Content = styled.div`
@@ -54,7 +55,16 @@ export const DayLine = styled.div`
   border-bottom: 0.5px solid #576675;
 `;
 
+export const IconWrapper = styled.div`
+  font-size: 1.4rem;
+
+  @media (max-width: 440px) {
+    display: none;
+  }
+`;
+
 export const DayOfTheWeek = styled.p`
+  min-width: 5.125rem;
 `;
 
 export const TemperatureWrapper = styled.div`

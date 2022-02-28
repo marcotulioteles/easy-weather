@@ -11,10 +11,12 @@ export const Container = styled.div`
 `;
 
 export const Description = styled.p`
-  font-size: normal;
+  font-size: 0.85rem;
+  max-width: 5rem;
+  text-align: center;
 `;
 
 export const IconWrapper = styled.div<IconWrapperProps>`
-  max-height: 6rem;
+  max-height: 5rem;
   font-size: ${({ iconSize }) => `${iconSize}px`};
 `;

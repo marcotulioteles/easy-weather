@@ -20,7 +20,7 @@ export function Input({ onChange }: Props) {
         onChange={onChange}
       />
       <FiSearch
-        color={theme.COLORS.BOX_BORDER}
+        color={theme.COLORS.BLUE_APP}
         size={16}
         style={{ position: 'absolute', left: 12 }}
       />

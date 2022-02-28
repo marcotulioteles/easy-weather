@@ -24,7 +24,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-weight: normal;
   font-size: 1.2rem;
-  color: ${theme.COLORS.PLACEHOLDER_TEXT};
+  color: ${theme.COLORS.LIGHT_GREY_APP};
   margin-top: 1.5rem;
   position: absolute;
   top: 0

@@ -6,11 +6,11 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-left: 0.75rem;
+  margin-top: 0.75rem;
 `;
 
 export const ContainerSideInfo = styled.div`
-  width: 5rem;
+  width: 4rem;
   height: 1.25rem;
   display: flex;
   justify-content: space-around ;

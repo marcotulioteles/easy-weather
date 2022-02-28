@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Hour = styled.p`
-  color: ${theme.COLORS.BUTTON_BACKGROUND};
+  color: ${theme.COLORS.GREEN_APP};
   font-size: 0.75rem;
 `;
 
@@ -30,7 +30,7 @@ export const TemperatureNumber = styled.p`
   font-size: 0.75rem;
 `;
 
-export const TemperatureCelsiusSymbol = styled.p`
+export const CelsiusSign = styled.p`
   font-family: 'Barlow Semi Condensed', 'Arial', sans-serif;
   font-size: 0.6rem;
 `;

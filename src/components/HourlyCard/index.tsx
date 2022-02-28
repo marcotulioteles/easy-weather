@@ -1,3 +1,4 @@
+import { WiTime4 } from "react-icons/wi";
 import { useGetForecasts } from "../../hooks/forecasts";
 import { hourFormatted } from "../../utils";
 import { HourlyElement } from "../HourlyElement";
@@ -14,6 +15,7 @@ export function HourlyCard() {
   return (
     <Container>
       <TitleWrapper>
+        <WiTime4 size={18} />
         <TitleText>hourly forecast</TitleText>
       </TitleWrapper>
       <HourlyContainer>

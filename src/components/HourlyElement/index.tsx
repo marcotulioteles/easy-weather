@@ -4,7 +4,7 @@ import {
   Container,
   Hour,
   IconWrapper,
-  TemperatureCelsiusSymbol,
+  CelsiusSign,
   TemperatureNumber,
   TemperatureWrapper
 } from "./styles";
@@ -24,7 +24,7 @@ export function HourlyElement({ hour, iconName, temperature }: Props) {
       </IconWrapper>
       <TemperatureWrapper>
         <TemperatureNumber>{convertKelvinToCelsius(Number(temperature))}</TemperatureNumber>
-        <TemperatureCelsiusSymbol>°C</TemperatureCelsiusSymbol>
+        <CelsiusSign>°C</CelsiusSign>
       </TemperatureWrapper>
     </Container>
   );

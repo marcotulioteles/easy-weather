@@ -35,8 +35,8 @@ export type DailyForecastData = {
 
 export type CurrentForecastData = {
   temp: number;
-  min_temp?: number;
-  max_temp?: number;
+  min_temp: number;
+  max_temp: number;
   feels_like: number;
   humidity: number;
   clouds: number;

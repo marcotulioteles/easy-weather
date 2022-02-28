@@ -56,7 +56,7 @@ export function Header() {
         </LogoContainer>
         <DateContainer>
           <FiCalendar
-            color={theme.COLORS.BOX_BORDER}
+            color={theme.COLORS.BLUE_APP}
             size={28}
           />
           <DateText>{currentDate}</DateText>
@@ -65,7 +65,7 @@ export function Header() {
       <Location>
         {forecast?.current?.temp && !loading &&
           <>
-            <FiMapPin size={36} color={theme.COLORS.BOX_BORDER} />
+            <FiMapPin size={36} color={theme.COLORS.BLUE_APP} />
             <LocationText>{`${locationResponse.name}, ${locationResponse.country}`}</LocationText>
           </>
         }
