@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const oneCallWeatherDataAPI = axios.create({
+export const weatherDataAPI = axios.create({
   baseURL: 'https://api.openweathermap.org/data/2.5'
 });
 

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useGetForecasts } from "../../hooks/forecasts";
 import { hourFormatted } from "../../utils";
 import { HourlyElement } from "../HourlyElement";
@@ -11,10 +10,6 @@ import {
 
 export function HourlyCard() {
   const { forecast } = useGetForecasts();
-
-  useEffect(() => {
-    console.log(hourFormatted(forecast.hourly[0].dt * 1000));
-  }, [forecast]);
 
   return (
     <Container>

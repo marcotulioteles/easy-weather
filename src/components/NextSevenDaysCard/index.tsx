@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { WiDaySunny, WiDirectionDown } from "react-icons/wi";
+import { useGetForecasts } from "../../hooks/forecasts";
+import { convertKelvinToCelsius } from "../../utils";
 import {
   Container,
   Content,
@@ -11,35 +14,60 @@ import {
   MaxAndMinTemperature
 } from "./styles";
 
-export function ForecastDayLine() {
+interface Props {
+  dayOfTheWeek: string;
+  minTemperature: string;
+  maxTemperature: string;
+}
+
+export function ForecastDayLine({ dayOfTheWeek, maxTemperature, minTemperature }: Props) {
   return (
     <DayLine>
-      <DayOfTheWeek>Thursday</DayOfTheWeek>
+      <DayOfTheWeek>{dayOfTheWeek}</DayOfTheWeek>
       <WiDaySunny />
       <MaxAndMinTemperature>
         <TemperatureWrapper>
           <WiDirectionDown />
-          <TemperatureNumber>21°C</TemperatureNumber>
+          <TemperatureNumber>{minTemperature}°C</TemperatureNumber>
         </TemperatureWrapper>
         <TemperatureWrapper>
           <WiDirectionDown />
-          <TemperatureNumber>32°C</TemperatureNumber>
+          <TemperatureNumber>{maxTemperature}°C</TemperatureNumber>
         </TemperatureWrapper>
       </MaxAndMinTemperature>
     </DayLine>
   )
 }
 
-const Days = [1, 2, 3, 4, 5, 6, 7];
+const extractDayOfTheWeekString = (date: number) => {
+  const dateFormatted = Intl.DateTimeFormat('en-US', {
+    weekday: 'long'
+  }).format(date * 1000);
+
+  return dateFormatted;
+}
 
 export function NextSevenDaysCard() {
+  const { forecast } = useGetForecasts();
+
+  useEffect(() => {
+    console.log(extractDayOfTheWeekString(forecast.daily[0].dt))
+  }, [forecast]);
+
   return (
     <Container>
       <TitleWrapper>
         <Title>next 7 days</Title>
       </TitleWrapper>
       <Content>
-        {Days.map(item => (<ForecastDayLine key={`forecast-day-line-${item}`} />))}
+        {forecast.daily.map((item, index) => (
+          <ForecastDayLine
+            key={`forecast-day-line-${index}`}
+            dayOfTheWeek={extractDayOfTheWeekString(item.dt)}
+            maxTemperature={convertKelvinToCelsius(item.temp.max)}
+            minTemperature={convertKelvinToCelsius(item.temp.min)}
+          />
+        ))}
       </Content>
     </Container>
   );

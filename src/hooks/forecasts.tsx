@@ -1,5 +1,5 @@
 import { useContext, useEffect, createContext, ReactNode, useState, SetStateAction } from 'react';
-import { oneCallWeatherDataAPI, directGeocodingAPI } from '../services/api';
+import { weatherDataAPI, directGeocodingAPI } from '../services/api';
 import { ForecastData, LocationData } from './types';
 import { mapForecastData, mapLocationData } from './utils/functions';
 
@@ -35,13 +35,27 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
 
       setLocationResponse(mapLocationData(locationData));
 
-      if (locationData) {
-        const response = await oneCallWeatherDataAPI
-          .get(`onecall?lat=${locationData[0].lat}&lon=${locationData[0].lon}&exclude=minutely,alerts&appid=${process.env.NEXT_PUBLIC_APPID}`)
-        const forecastData = response.data;
+      try {
+        if (locationData) {
+          const oneCallWeatherResponse = await weatherDataAPI
+            .get(`onecall?lat=${locationData[0].lat}&lon=${locationData[0].lon}&exclude=minutely,alerts&appid=${process.env.NEXT_PUBLIC_APPID}`)
+          const forecastDataFormatted = mapForecastData(oneCallWeatherResponse.data);
 
-        setForecast(mapForecastData(forecastData));
-        setLoading(false);
+          const currentWeatherResponse = await weatherDataAPI
+            .get(`weather?lat=${locationData[0].lat}&lon=${locationData[0].lon}&appid=${process.env.NEXT_PUBLIC_APPID}`)
+
+          setForecast({
+            ...forecastDataFormatted,
+            current: {
+              ...forecastDataFormatted.current,
+              min_temp: currentWeatherResponse.data.main.temp_min,
+              max_temp: currentWeatherResponse.data.main.temp_max,
+            }
+          });
+          setLoading(false);
+        }
+      } catch (error) {
+        setError(true);
       }
     } catch (error) {
       setError(true);
