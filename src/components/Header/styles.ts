@@ -94,6 +94,12 @@ export const Location = styled.div`
 
 export const LocationText = styled.p`
   font-size: 1.5rem;
-  margin-top: 0.5rem;
+  margin-right: 0.5rem;
   text-align: center;
+`;
+
+export const LocationTextContainer = styled.div`
+  display: flex; 
+  align-items: center;
+  margin-top: 0.5rem;
 `;

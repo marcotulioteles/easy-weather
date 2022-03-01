@@ -12,7 +12,8 @@ import {
   Location,
   LocationText,
   AppTitleFirstName,
-  AppTitleLastName
+  AppTitleLastName,
+  LocationTextContainer
 } from './styles';
 
 import { Input } from '../Input';
@@ -66,7 +67,16 @@ export function Header() {
         {forecast?.current?.temp && !loading &&
           <>
             <FiMapPin size={36} color={theme.COLORS.BLUE_APP} />
-            <LocationText>{`${locationResponse.name}, ${locationResponse.country}`}</LocationText>
+            <LocationTextContainer>
+              <LocationText>{`${locationResponse.name}`}</LocationText>
+              <Image
+                src={`https://flagcdn.com/w40/${locationResponse.country.toLowerCase()}.png`}
+                width={40}
+                height={40}
+                objectFit='scale-down'
+                alt={locationResponse.country}
+              />
+            </LocationTextContainer>
           </>
         }
       </Location>
@@ -77,6 +87,8 @@ export function Header() {
         <Button
           name='search'
           onClick={() => setLocationInput(locationInputValue)}
+          disabled={loading}
+          loading={loading}
         />
       </ResearchContainer>
     </Container>
