@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import { useGetForecasts } from "../../hooks/forecasts";
 import { theme } from "../../styles/theme";
 import { hourFormatted } from "../../utils";
+import { EmptyState } from "../EmptyState";
 import { ForecastCard } from "../ForecastCard";
 import { ForecastsContainer } from "../ForecastsContainer";
 import { Header } from "../Header";
@@ -32,13 +34,19 @@ const generateDateNow = () => {
 }
 
 export function HomeContent() {
-  const { forecast, loading } = useGetForecasts();
+  const { forecast, loading, isEmpty } = useGetForecasts();
+
+  // useEffect(() => {
+  //   console.log(locationResponse);
+  //   console.log('IS EMPTY: ', isEmpty);
+  // }, [locationResponse]);
 
   return (
     <Container>
       <Header />
       <ForecastsContainer>
-        {loading && <Loading />}
+        {!isEmpty && loading && <Loading />}
+        {isEmpty && <EmptyState />}
         {forecast.current && !loading &&
           <>
             <ForecastCard />

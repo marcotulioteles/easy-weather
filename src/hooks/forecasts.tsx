@@ -14,6 +14,7 @@ interface ForecastContextProps {
   error: boolean;
   forecast: ForecastData;
   loading: boolean;
+  isEmpty: boolean;
 }
 
 export const ForecastsContext = createContext({} as ForecastContextProps);
@@ -24,6 +25,7 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
   const [forecast, setForecast] = useState<ForecastData>({} as ForecastData);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
 
   async function fetchForecast(locationInput: string) {
     try {
@@ -31,7 +33,10 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
 
       const response = await directGeocodingAPI
         .get(`direct?q=${locationInput}&appid=${process.env.NEXT_PUBLIC_APPID}`);
+
       const locationData = response.data;
+
+      locationData.length === 0 ? setIsEmpty(true) : setIsEmpty(false);
 
       setLocationResponse(mapLocationData(locationData));
 
@@ -74,7 +79,8 @@ function ForecastsProvider({ children }: ForecastsProviderProps) {
         setLocationInput,
         error,
         forecast,
-        loading
+        loading,
+        isEmpty
       }}>
       {children}
     </ForecastsContext.Provider>

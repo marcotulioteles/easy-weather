@@ -24,7 +24,7 @@ import { useGetForecasts } from '../../hooks/forecasts';
 export function Header() {
   const [locationInputValue, setLocationInputValue] = useState('');
   const [currentDate, setCurrentDate] = useState('');
-  const { setLocationInput, forecast, locationResponse, loading } = useGetForecasts();
+  const { setLocationInput, forecast, locationResponse, loading, isEmpty } = useGetForecasts();
 
   const handleSetLocation = (event: ChangeEvent<HTMLInputElement>) => {
     setLocationInputValue(event.target.value);
@@ -87,8 +87,8 @@ export function Header() {
         <Button
           name='search'
           onClick={() => setLocationInput(locationInputValue)}
-          disabled={loading}
-          loading={loading}
+          disabled={loading && !isEmpty}
+          loading={loading && !isEmpty}
         />
       </ResearchContainer>
     </Container>

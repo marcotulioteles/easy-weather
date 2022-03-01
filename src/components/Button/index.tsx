@@ -10,7 +10,7 @@ type Props = {
   name: string;
   onClick: () => void;
   disabled: boolean;
-  loading: boolean;
+  loading?: boolean;
 }
 
 

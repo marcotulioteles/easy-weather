@@ -15,7 +15,7 @@ export const ButtonElement = styled.button`
   border-radius: 0.5rem;
   transition: all 0.2s ease-in;
   transition-property: background-color, color;
-  font-size: 1.25rem;
+  font-size: 1rem;
 
   &:hover {
     background-color: ${theme.COLORS.DARKER_GREEN_APP};
