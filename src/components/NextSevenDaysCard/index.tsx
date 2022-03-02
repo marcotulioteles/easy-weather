@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { FiCalendar } from "react-icons/fi";
-import { WiDirectionUp } from "react-icons/wi";
+import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import { useGetForecasts } from "../../hooks/forecasts";
 import { theme } from "../../styles/theme";
 import { convertKelvinToCelsius } from "../../utils";
@@ -39,11 +39,11 @@ export function ForecastDayLine({
       </IconWrapper>
       <MaxAndMinTemperature>
         <TemperatureWrapper>
-          <WiDirectionUp size={20} style={{ rotate: '180deg' }} color={theme.COLORS.BLUE_APP} />
+          <TiArrowSortedDown size={20} style={{ rotate: '180deg' }} color={theme.COLORS.BLUE_APP} />
           <TemperatureNumber>{minTemperature}°C</TemperatureNumber>
         </TemperatureWrapper>
         <TemperatureWrapper>
-          <WiDirectionUp size={20} color={theme.COLORS.RED_APP} />
+          <TiArrowSortedUp size={20} color={theme.COLORS.RED_APP} />
           <TemperatureNumber>{maxTemperature}°C</TemperatureNumber>
         </TemperatureWrapper>
       </MaxAndMinTemperature>

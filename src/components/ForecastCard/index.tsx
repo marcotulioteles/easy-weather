@@ -16,7 +16,8 @@ import { useGetForecasts } from '../../hooks/forecasts';
 import { convertKelvinToCelsius } from '../../utils';
 import { IconsAndDescription } from '../IconsAndDescription';
 import { FiCalendar } from "react-icons/fi";
-import { WiDirectionUp, WiThermometer } from "react-icons/wi";
+import { WiThermometer } from "react-icons/wi";
+import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import { theme } from "../../styles/theme";
 
 export function ForecastCard() {
@@ -49,12 +50,12 @@ export function ForecastCard() {
           <MinAndMaxTempContainer>
             <WiThermometer size={32} color={theme.COLORS.LIGHT_YELLOW_APP} />
             <MinMaxTemperatureWrapper>
-              <WiDirectionUp size={24} style={{ rotate: '180deg' }} color={theme.COLORS.BLUE_APP} />
+              <TiArrowSortedDown size={24} color={theme.COLORS.BLUE_APP} />
               <MinMaxTemperature>{convertKelvinToCelsius(forecast.current.min_temp)}</MinMaxTemperature>
               <CelsiusSign fontSize='1'>°C</CelsiusSign>
             </MinMaxTemperatureWrapper>
             <MinMaxTemperatureWrapper>
-              <WiDirectionUp size={24} color={theme.COLORS.RED_APP} />
+              <TiArrowSortedUp size={24} color={theme.COLORS.RED_APP} />
               <MinMaxTemperature>{convertKelvinToCelsius(forecast.current.max_temp)}</MinMaxTemperature>
               <CelsiusSign fontSize='1'>°C</CelsiusSign>
             </MinMaxTemperatureWrapper>
