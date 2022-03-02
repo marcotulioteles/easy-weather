@@ -39,7 +39,7 @@ export function ForecastDayLine({
       </IconWrapper>
       <MaxAndMinTemperature>
         <TemperatureWrapper>
-          <TiArrowSortedDown size={20} style={{ rotate: '180deg' }} color={theme.COLORS.BLUE_APP} />
+          <TiArrowSortedDown size={20} color={theme.COLORS.BLUE_APP} />
           <TemperatureNumber>{minTemperature}°C</TemperatureNumber>
         </TemperatureWrapper>
         <TemperatureWrapper>
