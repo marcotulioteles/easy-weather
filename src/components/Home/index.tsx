@@ -20,7 +20,7 @@ import {
 } from "./styles";
 
 const generateDateNow = () => {
-  const regex = /\d:\d+\s[a-zA-z]+/;
+  const regex = /\d+:\d+\s[a-zA-z]+/;
   const date = Date.now();
 
   const dateFormatted = new Intl.DateTimeFormat('en-US', {
@@ -35,11 +35,6 @@ const generateDateNow = () => {
 
 export function HomeContent() {
   const { forecast, loading, isEmpty } = useGetForecasts();
-
-  // useEffect(() => {
-  //   console.log(locationResponse);
-  //   console.log('IS EMPTY: ', isEmpty);
-  // }, [locationResponse]);
 
   return (
     <Container>
