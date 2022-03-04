@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import { useGetForecasts } from "../../hooks/forecasts";
 import { theme } from "../../styles/theme";
-import { hourFormatted } from "../../utils";
 import { EmptyState } from "../EmptyState";
 import { ForecastCard } from "../ForecastCard";
 import { ForecastsContainer } from "../ForecastsContainer";
