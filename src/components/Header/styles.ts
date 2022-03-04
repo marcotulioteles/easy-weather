@@ -70,7 +70,7 @@ export const DateText = styled.p`
   margin-left: 0.75rem;
 `;
 
-export const ResearchContainer = styled.div`
+export const ResearchContainer = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;

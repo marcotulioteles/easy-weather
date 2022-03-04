@@ -40,6 +40,11 @@ export function Header() {
     setCurrentDate(dateFormatted);
   }, [forecast])
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLocationInput(locationInputValue)
+  }
+
   return (
     <Container>
       <LogoAndDate>
@@ -80,13 +85,13 @@ export function Header() {
           </>
         }
       </Location>
-      <ResearchContainer>
+      <ResearchContainer onSubmit={handleSubmit}>
         <Input
           onChange={handleSetLocation}
         />
         <Button
           name='search'
-          onClick={() => setLocationInput(locationInputValue)}
+          type='submit'
           disabled={loading && !isEmpty}
           loading={loading && !isEmpty}
         />
