@@ -1,4 +1,4 @@
-#⛅ Easy-Weather
+# ⛅ Easy-Weather
 
 ## Getting Started
 
