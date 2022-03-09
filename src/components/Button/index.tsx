@@ -24,7 +24,7 @@ export function Button({
   return (
     <Container>
       {loading &&
-        <SVGWrapper>
+        <SVGWrapper data-testid="loading-spinner-icon">
           <LoadingSpinner width={20} height={20} />
         </SVGWrapper>
       }
