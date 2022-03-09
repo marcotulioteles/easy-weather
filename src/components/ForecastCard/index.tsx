@@ -41,7 +41,7 @@ export function ForecastCard() {
                 iconSize={80}
               />
               <TemperatureWrapper>
-                <Temperature>{convertKelvinToCelsius(forecast?.current?.temp)}</Temperature>
+                <Temperature data-testid='main-temp'>{convertKelvinToCelsius(forecast?.current?.temp)}</Temperature>
                 <CelsiusSign fontSize='2.5'>°C</CelsiusSign>
               </TemperatureWrapper>
             </Content>

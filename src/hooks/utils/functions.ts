@@ -8,7 +8,12 @@ const mapForecastData = (forecastData: ForecastData) => {
       humidity: forecastData.current.humidity,
       clouds: forecastData.current.clouds,
       wind_speed: forecastData.current.wind_speed,
-      weather: forecastData.current.weather,
+      weather: forecastData.current.weather.map(weather => {
+        return {
+          description: weather.description,
+          icon: weather.icon
+        }
+      }),
     },
     hourly: forecastData.hourly.map((hour: HourlyForecastData) => {
       return {
