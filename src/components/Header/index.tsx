@@ -20,6 +20,7 @@ import { Input } from '../Input';
 import { Button } from '../Button';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useGetForecasts } from '../../hooks/forecasts';
+import { handleOnClickSearchButton } from './utils';
 
 export function Header() {
   const [locationInputValue, setLocationInputValue] = useState('');
@@ -86,9 +87,10 @@ export function Header() {
         />
         <Button
           name='search'
-          onClick={() => setLocationInput(locationInputValue)}
+          onClick={() => handleOnClickSearchButton(setLocationInput, locationInputValue)}
           disabled={loading && !isEmpty}
           loading={loading && !isEmpty}
+          data-testid='btn-search'
         />
       </ResearchContainer>
     </Container>
