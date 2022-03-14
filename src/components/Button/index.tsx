@@ -8,7 +8,7 @@ import LoadingSpinner from '../../../public/images/loading-spinner-2.svg';
 type Props = {
   type?: 'button' | 'submit' | 'reset' | undefined;
   name: string;
-  onClick: () => void;
+  onClick?: () => void;
   disabled: boolean;
   loading?: boolean;
 }
