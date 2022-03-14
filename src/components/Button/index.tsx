@@ -24,7 +24,7 @@ export function Button({
     <Container>
       {loading &&
         <SVGWrapper>
-          <LoadingSpinner width={20} height={20} />
+          <svg><LoadingSpinner width={20} height={20} /></svg>
         </SVGWrapper>
       }
       <ButtonElement
