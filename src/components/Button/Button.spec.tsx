@@ -41,8 +41,6 @@ describe('Button Component', () => {
       />
     );
 
-    component.debug();
-
     expect(component.queryByTestId('loading-spinner-icon')).not.toBeInTheDocument();
   });
 

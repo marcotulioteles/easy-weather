@@ -13,7 +13,6 @@ type Props = {
   loading?: boolean;
 }
 
-
 export function Button({
   type,
   name,
@@ -24,7 +23,7 @@ export function Button({
   return (
     <Container>
       {loading &&
-        <SVGWrapper data-testid="loading-spinner-icon">
+        <SVGWrapper>
           <LoadingSpinner width={20} height={20} />
         </SVGWrapper>
       }

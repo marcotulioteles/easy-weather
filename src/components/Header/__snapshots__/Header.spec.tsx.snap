@@ -97,7 +97,7 @@ Object {
             <p
               class="styles__DateText-sc-1ub8hmw-7 laZUKz"
             >
-              March 10, 2022 at 11:49 PM
+              March 13, 2022 at 11:38 PM
             </p>
           </div>
         </div>
@@ -114,6 +114,7 @@ Object {
               class="styles__InputField-sc-vzkx75-1 bXUDHA"
               placeholder="Your location e.g.: (New York, US)"
               type="text"
+              value=""
             />
             <svg
               color="#2A9DC1"
@@ -247,7 +248,7 @@ Object {
           <p
             class="styles__DateText-sc-1ub8hmw-7 laZUKz"
           >
-            March 10, 2022 at 11:49 PM
+            March 13, 2022 at 11:38 PM
           </p>
         </div>
       </div>
@@ -264,6 +265,7 @@ Object {
             class="styles__InputField-sc-vzkx75-1 bXUDHA"
             placeholder="Your location e.g.: (New York, US)"
             type="text"
+            value=""
           />
           <svg
             color="#2A9DC1"

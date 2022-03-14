@@ -62,10 +62,6 @@ const extractDayOfTheWeekString = (date: number) => {
 export function NextSevenDaysCard() {
   const { forecast } = useGetForecasts();
 
-  useEffect(() => {
-    console.log(extractDayOfTheWeekString(forecast.daily[0].dt))
-  }, [forecast]);
-
   return (
     <Container>
       <TitleWrapper>

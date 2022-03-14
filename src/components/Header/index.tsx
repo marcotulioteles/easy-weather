@@ -20,7 +20,6 @@ import { Input } from '../Input';
 import { Button } from '../Button';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useGetForecasts } from '../../hooks/forecasts';
-import { handleOnClickSearchButton } from './utils';
 
 export function Header() {
   const [locationInputValue, setLocationInputValue] = useState('');
@@ -28,6 +27,7 @@ export function Header() {
   const { setLocationInput, forecast, locationResponse, loading, isEmpty } = useGetForecasts();
 
   const handleSetLocation = (event: ChangeEvent<HTMLInputElement>) => {
+    console.log('Digitou input location!')
     setLocationInputValue(event.target.value);
   }
 
@@ -83,14 +83,14 @@ export function Header() {
       </Location>
       <ResearchContainer>
         <Input
+          value={locationInputValue}
           onChange={handleSetLocation}
         />
         <Button
           name='search'
-          onClick={() => handleOnClickSearchButton(setLocationInput, locationInputValue)}
+          onClick={() => setLocationInput(locationInputValue)}
           disabled={loading && !isEmpty}
           loading={loading && !isEmpty}
-          data-testid='btn-search'
         />
       </ResearchContainer>
     </Container>
