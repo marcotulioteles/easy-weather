@@ -9,15 +9,17 @@ import { ChangeEvent } from 'react';
 
 type Props = {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  value: string;
 }
 
-export function Input({ onChange }: Props) {
+export function Input({ onChange, value }: Props) {
   return (
     <Container>
       <InputField
         placeholder='Your location e.g.: (New York, US)'
         type='text'
         onChange={onChange}
+        value={value}
       />
       <FiSearch
         color={theme.COLORS.BLUE_APP}

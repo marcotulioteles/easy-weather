@@ -26,10 +26,6 @@ export function Header() {
   const [currentDate, setCurrentDate] = useState('');
   const { setLocationInput, forecast, locationResponse, loading, isEmpty } = useGetForecasts();
 
-  const handleSetLocation = (event: ChangeEvent<HTMLInputElement>) => {
-    setLocationInputValue(event.target.value);
-  }
-
   useEffect(() => {
     const date = Date.now();
     const dateFormatted = new Intl.DateTimeFormat('en-US', {
@@ -40,8 +36,8 @@ export function Header() {
     setCurrentDate(dateFormatted);
   }, [forecast])
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setLocationInput(locationInputValue)
   }
 
@@ -73,7 +69,7 @@ export function Header() {
           <>
             <FiMapPin size={36} color={theme.COLORS.BLUE_APP} />
             <LocationTextContainer>
-              <LocationText>{`${locationResponse.name}`}</LocationText>
+              <LocationText data-testid='location-name'>{`${locationResponse.name}`}</LocationText>
               <Image
                 src={`https://flagcdn.com/w40/${locationResponse.country.toLowerCase()}.png`}
                 width={40}
@@ -87,7 +83,8 @@ export function Header() {
       </Location>
       <ResearchContainer onSubmit={handleSubmit}>
         <Input
-          onChange={handleSetLocation}
+          value={locationInputValue}
+          onChange={event => setLocationInputValue(event.target.value)}
         />
         <Button
           name='search'
