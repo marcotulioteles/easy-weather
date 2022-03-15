@@ -67,8 +67,23 @@ describe('Button Component', () => {
       />
     );
 
-    fireEvent.click(component.getByText('Click here'));
+    fireEvent.click(component.getByRole(/button/));
 
     expect(onClickFn).toBeCalled();
+  });
+
+  it('should loading spinner icon when loading prop is true', () => {
+    const component = render(
+      <Button
+        disabled={false}
+        name='Click here'
+        onClick={onClickFn}
+        loading={true}
+      />
+    );
+
+    fireEvent.click(component.getByRole(/button/));
+
+    expect(component.getByTestId('loading-icon')).toBeInTheDocument();
   });
 });

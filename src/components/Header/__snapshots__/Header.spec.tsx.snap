@@ -97,14 +97,14 @@ Object {
             <p
               class="styles__DateText-sc-1ub8hmw-7 laZUKz"
             >
-              March 14, 2022 at 9:03 AM
+              March 14, 2022 at 10:32 PM
             </p>
           </div>
         </div>
         <div
           class="styles__Location-sc-1ub8hmw-9 kstKDZ"
         />
-        <div
+        <form
           class="styles__ResearchContainer-sc-1ub8hmw-8 dcUwof"
         >
           <div
@@ -147,11 +147,12 @@ Object {
           >
             <button
               class="styles__ButtonElement-sc-fbxr7z-1 iwRJDh"
+              type="submit"
             >
               search
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </body>,
@@ -248,14 +249,14 @@ Object {
           <p
             class="styles__DateText-sc-1ub8hmw-7 laZUKz"
           >
-            March 14, 2022 at 9:03 AM
+            March 14, 2022 at 10:32 PM
           </p>
         </div>
       </div>
       <div
         class="styles__Location-sc-1ub8hmw-9 kstKDZ"
       />
-      <div
+      <form
         class="styles__ResearchContainer-sc-1ub8hmw-8 dcUwof"
       >
         <div
@@ -298,11 +299,12 @@ Object {
         >
           <button
             class="styles__ButtonElement-sc-fbxr7z-1 iwRJDh"
+            type="submit"
           >
             search
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>,
   "debug": [Function],
