@@ -1,10 +1,178 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header Component should render the component 1`] = `
+exports[`<HomeContent /> should render the component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <div
+        class="styles__Container-sc-lrxsm0-0 fotxIH"
+      >
+        <div
+          class="styles__Container-sc-1ub8hmw-0 lhVrgj"
+        >
+          <div
+            class="styles__LogoAndDate-sc-1ub8hmw-2 kzUXEJ"
+          >
+            <div
+              class="styles__LogoContainer-sc-1ub8hmw-1 hBmjLk"
+            >
+              <span
+                style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2780%27%20height=%2780%27/%3e"
+                    style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  />
+                </span>
+                <img
+                  alt="EasyWeatherLogo"
+                  data-nimg="intrinsic"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+              <div
+                class="styles__AppTitle-sc-1ub8hmw-3 iqlRYm"
+              >
+                <h1
+                  class="styles__AppTitleFirstName-sc-1ub8hmw-4 krAcfM"
+                >
+                  Easy
+                </h1>
+                <p
+                  class="styles__AppTitleLastName-sc-1ub8hmw-5 fsrlXR"
+                >
+                  Weather
+                </p>
+              </div>
+            </div>
+            <div
+              class="styles__DateContainer-sc-1ub8hmw-6 ghaBpc"
+            >
+              <svg
+                color="#2A9DC1"
+                fill="none"
+                height="28"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                style="color: rgb(42, 157, 193);"
+                viewBox="0 0 24 24"
+                width="28"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  height="18"
+                  rx="2"
+                  ry="2"
+                  width="18"
+                  x="3"
+                  y="4"
+                />
+                <line
+                  x1="16"
+                  x2="16"
+                  y1="2"
+                  y2="6"
+                />
+                <line
+                  x1="8"
+                  x2="8"
+                  y1="2"
+                  y2="6"
+                />
+                <line
+                  x1="3"
+                  x2="21"
+                  y1="10"
+                  y2="10"
+                />
+              </svg>
+              <p
+                class="styles__DateText-sc-1ub8hmw-7 laZUKz"
+              >
+                March 14, 2022 at 11:16 PM
+              </p>
+            </div>
+          </div>
+          <div
+            class="styles__Location-sc-1ub8hmw-9 kstKDZ"
+          />
+          <form
+            class="styles__ResearchContainer-sc-1ub8hmw-8 dcUwof"
+          >
+            <div
+              class="styles__Container-sc-vzkx75-0 blYGbU"
+            >
+              <input
+                class="styles__InputField-sc-vzkx75-1 bXUDHA"
+                placeholder="Your location e.g.: (New York, US)"
+                type="text"
+                value=""
+              />
+              <svg
+                color="#2A9DC1"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                style="color: rgb(42, 157, 193); position: absolute; left: 12px;"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="8"
+                />
+                <line
+                  x1="21"
+                  x2="16.65"
+                  y1="21"
+                  y2="16.65"
+                />
+              </svg>
+            </div>
+            <div
+              class="styles__Container-sc-fbxr7z-0 McDWU"
+            >
+              <button
+                class="styles__ButtonElement-sc-fbxr7z-1 iwRJDh"
+                type="submit"
+              >
+                search
+              </button>
+            </div>
+          </form>
+        </div>
+        <div
+          class="styles__Container-sc-y41mfb-0 PPIfk"
+        >
+          <h1
+            class="styles__Title-sc-y41mfb-1 gUPqFs"
+          >
+            FORECAST
+          </h1>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="styles__Container-sc-lrxsm0-0 fotxIH"
+    >
       <div
         class="styles__Container-sc-1ub8hmw-0 lhVrgj"
       >
@@ -154,157 +322,15 @@ Object {
           </div>
         </form>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="styles__Container-sc-1ub8hmw-0 lhVrgj"
-    >
       <div
-        class="styles__LogoAndDate-sc-1ub8hmw-2 kzUXEJ"
+        class="styles__Container-sc-y41mfb-0 PPIfk"
       >
-        <div
-          class="styles__LogoContainer-sc-1ub8hmw-1 hBmjLk"
+        <h1
+          class="styles__Title-sc-y41mfb-1 gUPqFs"
         >
-          <span
-            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
-          >
-            <span
-              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
-            >
-              <img
-                alt=""
-                aria-hidden="true"
-                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2780%27%20height=%2780%27/%3e"
-                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
-              />
-            </span>
-            <img
-              alt="EasyWeatherLogo"
-              data-nimg="intrinsic"
-              decoding="async"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-            />
-            <noscript />
-          </span>
-          <div
-            class="styles__AppTitle-sc-1ub8hmw-3 iqlRYm"
-          >
-            <h1
-              class="styles__AppTitleFirstName-sc-1ub8hmw-4 krAcfM"
-            >
-              Easy
-            </h1>
-            <p
-              class="styles__AppTitleLastName-sc-1ub8hmw-5 fsrlXR"
-            >
-              Weather
-            </p>
-          </div>
-        </div>
-        <div
-          class="styles__DateContainer-sc-1ub8hmw-6 ghaBpc"
-        >
-          <svg
-            color="#2A9DC1"
-            fill="none"
-            height="28"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            style="color: rgb(42, 157, 193);"
-            viewBox="0 0 24 24"
-            width="28"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              height="18"
-              rx="2"
-              ry="2"
-              width="18"
-              x="3"
-              y="4"
-            />
-            <line
-              x1="16"
-              x2="16"
-              y1="2"
-              y2="6"
-            />
-            <line
-              x1="8"
-              x2="8"
-              y1="2"
-              y2="6"
-            />
-            <line
-              x1="3"
-              x2="21"
-              y1="10"
-              y2="10"
-            />
-          </svg>
-          <p
-            class="styles__DateText-sc-1ub8hmw-7 laZUKz"
-          >
-            March 14, 2022 at 11:16 PM
-          </p>
-        </div>
+          FORECAST
+        </h1>
       </div>
-      <div
-        class="styles__Location-sc-1ub8hmw-9 kstKDZ"
-      />
-      <form
-        class="styles__ResearchContainer-sc-1ub8hmw-8 dcUwof"
-      >
-        <div
-          class="styles__Container-sc-vzkx75-0 blYGbU"
-        >
-          <input
-            class="styles__InputField-sc-vzkx75-1 bXUDHA"
-            placeholder="Your location e.g.: (New York, US)"
-            type="text"
-            value=""
-          />
-          <svg
-            color="#2A9DC1"
-            fill="none"
-            height="16"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            style="color: rgb(42, 157, 193); position: absolute; left: 12px;"
-            viewBox="0 0 24 24"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="11"
-              cy="11"
-              r="8"
-            />
-            <line
-              x1="21"
-              x2="16.65"
-              y1="21"
-              y2="16.65"
-            />
-          </svg>
-        </div>
-        <div
-          class="styles__Container-sc-fbxr7z-0 McDWU"
-        >
-          <button
-            class="styles__ButtonElement-sc-fbxr7z-1 iwRJDh"
-            type="submit"
-          >
-            search
-          </button>
-        </div>
-      </form>
     </div>
   </div>,
   "debug": [Function],

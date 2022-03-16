@@ -37,3 +37,17 @@ export const hourFormatted = (date: number) => {
 
   return hourToShow < 10 ? `0${hourToShow}:00` : `${hourToShow}:00`;
 };
+
+export const generateDateNow = () => {
+  const regex = /\d+:\d+\s[a-zA-z]+/;
+  const date = Date.now();
+
+  const dateFormatted = new Intl.DateTimeFormat('en-US', {
+    dateStyle: 'long',
+    timeStyle: 'short'
+  }).format(date);
+
+  const response = dateFormatted.match(regex) as Array<string>;
+
+  return response[0].toLowerCase();
+};

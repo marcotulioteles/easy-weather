@@ -1,6 +1,7 @@
 import { FiSearch } from "react-icons/fi";
 import { useGetForecasts } from "../../hooks/forecasts";
 import { theme } from "../../styles/theme";
+import { generateDateNow } from "../../utils";
 import { EmptyState } from "../EmptyState";
 import { ForecastCard } from "../ForecastCard";
 import { ForecastsContainer } from "../ForecastsContainer";
@@ -16,20 +17,6 @@ import {
   SearchTimeTitleWrapper,
   SearchTimeWrapper
 } from "./styles";
-
-const generateDateNow = () => {
-  const regex = /\d+:\d+\s[a-zA-z]+/;
-  const date = Date.now();
-
-  const dateFormatted = new Intl.DateTimeFormat('en-US', {
-    dateStyle: 'long',
-    timeStyle: 'short'
-  }).format(date);
-
-  const response = dateFormatted.match(regex) as Array<string>;
-
-  return response[0].toLowerCase();
-}
 
 export function HomeContent() {
   const { forecast, loading, isEmpty } = useGetForecasts();
