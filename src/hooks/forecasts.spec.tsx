@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import React, { FormEvent, useState } from 'react';
-import { ForecastsContext, ForecastsProvider, useGetForecasts } from './forecasts';
-import { ForecastData, LocationData } from './types';
+import { ForecastsProvider, useGetForecasts } from './forecasts';
+import mockAxios from '../tests/__mocks__/axios';
 
 const Component = () => {
   const {
