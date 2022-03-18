@@ -1,0 +1,129 @@
+{
+  "data": {
+    "lat": -18.9188,
+    "lon": -48.2768,
+    "timezone": "America/Sao_Paulo",
+    "timezone_offset": -10800,
+    "current": {
+      "dt": 1647519999,
+      "sunrise": 1647508571,
+      "sunset": 1647552408,
+      "temp": 296.7,
+      "feels_like": 297.15,
+      "pressure": 1020,
+      "humidity": 78,
+      "dew_point": 292.64,
+      "uvi": 4.31,
+      "clouds": 75,
+      "visibility": 10000,
+      "wind_speed": 6.17,
+      "wind_deg": 40,
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04d"
+        }
+      ]
+    },
+    "hourly": [
+      {
+        "dt": 1647518400,
+        "temp": 296.7,
+        "feels_like": 297.15,
+        "pressure": 1020,
+        "humidity": 78,
+        "dew_point": 292.64,
+        "uvi": 4.31,
+        "clouds": 75,
+        "visibility": 10000,
+        "wind_speed": 4.06,
+        "wind_deg": 42,
+        "wind_gust": 7.41,
+        "weather": [
+          {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04d"
+          }
+        ],
+        "pop": 0.11
+      }
+    ],
+    "daily": [
+      {
+        "dt": 1647529200,
+        "sunrise": 1647508571,
+        "sunset": 1647552408,
+        "moonrise": 1647552000,
+        "moonset": 1647505860,
+        "moon_phase": 0.48,
+        "temp": {
+          "day": 298.51,
+          "min": 291.72,
+          "max": 300.24,
+          "night": 293.09,
+          "eve": 296.19,
+          "morn": 293.52
+        },
+        "feels_like": {
+          "day": 298.9,
+          "night": 293.49,
+          "eve": 296.74,
+          "morn": 293.88
+        },
+        "pressure": 1016,
+        "humidity": 69,
+        "dew_point": 292.41,
+        "wind_speed": 5.7,
+        "wind_deg": 29,
+        "wind_gust": 7.72,
+        "weather": [
+          {
+            "id": 500,
+            "main": "Rain",
+            "description": "light rain",
+            "icon": "10d"
+          }
+        ],
+        "clouds": 63,
+        "pop": 0.99,
+        "rain": 2.56,
+        "uvi": 12.24
+      }
+    ]
+  },
+  "status": 200,
+  "statusText": "OK",
+  "headers": {
+    "content-length": "18139",
+    "content-type": "application/json; charset=utf-8"
+  },
+  "config": {
+    "transitional": {
+      "silentJSONParsing": true,
+      "forcedJSONParsing": true,
+      "clarifyTimeoutError": false
+    },
+    "transformRequest": [
+      null
+    ],
+    "transformResponse": [
+      null
+    ],
+    "timeout": 0,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "headers": {
+      "Accept": "application/json, text/plain, */*"
+    },
+    "baseURL": "https://api.openweathermap.org/data/2.5",
+    "method": "get",
+    "url": "onecall?lat=-18.9188041&lon=-48.2767837&exclude=minutely,alerts&appid=ddcdb9a0329e7d6fc827511a021e0431"
+  },
+  "request": {}
+}
